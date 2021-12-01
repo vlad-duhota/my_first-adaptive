@@ -495,9 +495,16 @@ list-style: none;
        .video{
            width: 100%;
        }
+       .services-list{
+           width: 80%;
+       }
 }
 @media(max-width:357px){
     .hero-title{
         font-size: 35px;
     }
+    .btn{
+        width: 120px;
+    }
+    
 }
