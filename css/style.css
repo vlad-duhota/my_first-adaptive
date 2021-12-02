@@ -185,7 +185,7 @@ background: #dedfe0;
 }
 .usefullist-items {
     width: 340px;
-    padding-bottom: 25px;
+    padding: 0px 10px 25px;
     text-align: center;
     border-radius: 15px;
     transition: 0.3s;
@@ -235,7 +235,6 @@ list-style: none;
     color: #FFF;
     transition: 0.3s;
     display: flex;
-    flex-wrap: wrap;
    align-items: center;
    justify-content: center;
 }
@@ -504,6 +503,23 @@ list-style: none;
        }
        .services-list{
            width: 80%;
+       }
+       .useful-list{
+           flex-direction: column;
+       }
+       .usefullist-items{
+           width: 80%;
+           margin-bottom: 25px;
+       }
+       .countslist-items{
+           flex-direction: column;
+       }
+       .counts-img{
+           margin-right: 0;
+margin-bottom: 10px;
+       }
+       .countslist-items{
+           text-align: center;
        }
 }
 @media(max-width:357px){
