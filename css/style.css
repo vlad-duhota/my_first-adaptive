@@ -35,6 +35,7 @@ box-shadow: 5px 3px 30px rgba(0, 0,0, 0.4);
     display: flex;
 justify-content: space-between;
 align-items: center;
+flex-wrap: wrap;
 }
 .container {
     max-width: 1440px;
@@ -48,9 +49,11 @@ align-items: center;
 .logo-img {
 
 }
-
 .menu-btn{
    
+    display: none;
+}
+.nav-burger{
     display: none;
 }
 
@@ -534,21 +537,81 @@ list-style: none;
     }
 }
 @media (max-width:433px){
-    .menu-btn img{
-        display: block;
-        width: 50px;
-        height: 50px;
+    .hero{
+        padding-top: 30px;
     }
-    .menu-btn {
+    .up-header{
+        justify-content: space-around;
+    }
+    .menu-btn-img{
+        margin-top: 10px;
         display: block;
-        width: 50px;
-        height: 50px;
+        width: 35px;
+        height: 35px;
+        
+    }
+    .menu-btn-img-close{
+        display: none;
+        margin-top: 10px;
+        width: 35px;
+        height: 35px;
+      }
+    .menu-btn{
+        display: block;
+        width: 100%;
     }
     .nav{
         display: none;
     }
     .header{
         padding-top: 30px;
+    }
+    
+    .menu-btn::before{
+        content: '';  
+        display: block;
+        margin-top: 20px;
+        height: 5px;
+        border-radius: 40px;
+        width: 100%;
+        background-color: #fff;
+    }
+    
+    
+    .menu-checkbox:checked ~ .nav-burger{
+        display: block;
+    }
+    .menu-checkbox:checked ~  .menu-btn-img{
+        display: none;
+    }
+    .menu-checkbox:checked ~  .menu-btn-img-close{
+        display: block;
+    }
+ 
+    .menu-checkbox{
+        opacity: 0;
+        position: absolute;
+        width: 35px;
+        height: 35px;
+        top: 104px;
+        left: 20px;
+    }
+    .nav-burger{
+        margin-top: 35px;
+        width: 100%;
+        border-radius: 20px;
+        background-color: #FFF;
+        padding-top: 45px;
+        height: 81vh;
+    }
+    .menu{
+        flex-direction: column;
+        text-align: center;
+    }
+    .nav-burger .menu-link{
+        color: #00cccc;
+        line-height: 100px;
+        font-size: 35px;
     }
 }
 @media(max-width:357px){
