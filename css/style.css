@@ -50,15 +50,7 @@ flex-wrap: wrap;
 }
 
 
-.menu-btn{
-   
-    display: none;
-}
-.nav-burger{
-    display: none;
-}
-
-.menu {
+.menu-list{
     list-style: none;
     display: flex;
 }
@@ -93,7 +85,42 @@ flex-wrap: wrap;
     background-color: #FFF;
    color: #00cccc;
 }
-  
+.menu-btn{
+    display: none;
+}
+
+.toggle-btn {
+    display: none;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 20px;
+    z-index: 2;
+    background: #fff;
+    border-radius: 50%;
+    padding: 10px;
+    border: 2px solid #00cccc;
+}
+
+
+.toggle-btn span,
+.toggle-btn span::before,
+.toggle-btn span::after
+{
+    display: block;
+    height: 3px;
+    border-radius: 20px;
+    width: 25px;
+    background: #00cccc;
+    position: absolute;
+    position: absolute;
+    transition: 0.5s;
+}
+
+.toggle-btn span{
+    top:50%;
+    transform: translateY(-50%);
+}
 /* hero */
 .hero{
     padding-bottom: 190px;
@@ -716,121 +743,87 @@ list-style: none;
     .up-header{
         justify-content: space-around;
     }
-    .menu-btn-img{
-        margin-top: 15px;
-        display: block;
-        width: 35px;
-        height: 35px;
-        
-    }
-    .menu-btn-img-close{
-        display: none;
-        margin-top: 15px;
-        width: 35px;
-        height: 35px;
-      }
-    .menu-btn{
-        display: block;
+    .menu{
+        position: absolute;
+        top:0;
+        height: 100vh;
         width: 100%;
+        background: #ececec;
+        left: -100%;
+        z-index: 1;
         transition: 0.3s;
     }
-    .nav{
-        display: none;
+
+.menu-item{
+    margin-bottom: 125px;
+}    
+
+    .menu-list{
+        padding-top: 125px;
+        list-style: none;
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        align-items: center;
+     
     }
-    .header{
-        padding-top: 30px;
-    }
-    
-    .menu-btn::before{
-        content: '';  
+
+    .toggle-btn{
         display: block;
-        margin-top: 20px;
-        height: 5px;
-        border-radius: 40px;
-        width: 100%;
-        background-color: #fff;
     }
-    
-    .nav-burger{
-        transform: translateX(0px);
+
+    .toggle-btn span::before
+    {
+        content: '';
+        top: -8px;
     }
-    .nav-burger .menu-item{
-        transform: translateX(0);
+
+    .toggle-btn span::after
+    {
+        content: '';
+        top: 8px;
     }
     
   main{
       position: relative;
-      padding-top: 155px;
+      padding-top: 123px;
     }
    .header{
       background: #17d5c5;
       padding-bottom: 25px;
   }
 
-    @keyframes burger{
-        0%{
-            transform: translateX(-500px);
-        }
-        100%{
-            transform: translateX(0);
-        }
-    }
-    @keyframes links{
-        0%{
-            transform: translateX(500px);
-        }
-        100%{
-            transform: translateX(0px);
-          }
-        }
-        
-    .menu-checkbox:checked ~ .nav-burger{
-   display: block;
-   animation: burger;
-   animation-duration: 0.5s;
-   animation-iteration-count:1;
-   animation-timing-function: ease-in-out;
+  .menu-link{
+      color:#000;
+      font-size: 35px;
+      text-decoration: underline #00cccc;
 
-    }
-    .menu-checkbox:checked  ~ .menu-btn-img{
-      display: none;
-       
-    }
-    .menu-checkbox:checked  ~ .menu-btn-img-close{
-        display: block;
-    }
-    .menu-checkbox:checked  ~  .nav-burger .menu-burger .menu-item{
-        animation:links;
-        animation-duration: 1s;
-        animation-iteration-count:1;
-    }
- 
-    .menu-checkbox{
-        opacity: 0;
-        position: absolute;
-        width: 35px;
-        height: 35px;
-        top: 104px;
-        left: 20px;
-    }
-    .nav-burger{
-        margin-top: 35px;
-        width: 100%;
-        border-radius: 20px;
-        background-color: #FFF;
-        padding-top: 45px;
-        height: 77vh;
-    }
-    .menu{
-        flex-direction: column;
-        text-align: center;
-    }
-    .nav-burger .menu-link{
-        color: #00cccc;
-        line-height: 100px;
-        font-size: 35px;
-    }
+  }
+
+ .menu-link:active{
+    color: #00cccc;
+ }
+
 }
+
+.menu-btn:checked ~ .menu{
+   left: 0;
+    display: block;
+}
+
+.menu-btn:checked + .toggle-btn span{
+    transform: rotate(45deg);
+}
+
+.menu-btn:checked + .toggle-btn span::before{
+    top: 0;
+}
+
+.menu-btn:checked + .toggle-btn span::after{
+    top: 0;
+    transform: rotate(-90deg);
+}
+
 @media(max-width:357px){
     .hero-title{
         font-size: 35px;
