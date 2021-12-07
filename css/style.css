@@ -26,23 +26,22 @@ box-shadow: 5px 3px 30px rgba(0, 0,0, 0.4);
 }
 /* header */
 .header {
-    padding-top: 60px;
+    padding: 32px 0;
     background-image: url(../images/bg.png);
     background-repeat: no-repeat;
     background-position: top;
     background-size: cover;
-  
-}
-.header{
     position: fixed;
     width: 100%;
     z-index: 2;
+  
 }
+
 .up-header{
     display: flex;
-justify-content: space-between;
-align-items: center;
-flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 }
 .container {
     max-width: 1440px;
@@ -644,6 +643,12 @@ list-style: none;
     }
     
 }
+@media (max-width:1116px){
+    .hero-title{
+        font-size: 52px;
+    }
+}
+
 @media (max-width:1095px){
     .hero .container{
         flex-direction: column;
@@ -653,12 +658,13 @@ list-style: none;
      margin: 0 auto;
     }
     .video-block{
-        width: 73%;
+        width: 70%;
         margin: 0 auto;
         margin-top: 55px;
     }
 }
-@media (max-width:648px) {
+
+@media (max-width:658px) {
     .customers .container{
        flex-direction: column;
        text-align: center;
@@ -691,6 +697,13 @@ list-style: none;
         margin-left: 10px;
         font-size: 14px;
     }
+
+    .hero-content{
+        width: 100%;
+       }
+       .video-block{
+           width: 100%;
+       }
 
 }
 @media (max-width:524px){
@@ -749,7 +762,7 @@ list-style: none;
         height: 100vh;
         width: 100%;
         background: #ececec;
-        left: -100%;
+        right: -100%;
         z-index: 1;
         transition: 0.3s;
     }
@@ -784,9 +797,9 @@ list-style: none;
         top: 8px;
     }
     
-  main{
+   .main{
       position: relative;
-      padding-top: 123px;
+      padding-top: 95px;
     }
    .header{
       background: #17d5c5;
@@ -807,7 +820,7 @@ list-style: none;
 }
 
 .menu-btn:checked ~ .menu{
-   left: 0;
+   right: 0;
     display: block;
 }
 
@@ -830,6 +843,19 @@ list-style: none;
     }
     .btn{
         width: 120px;
+    }
+
+    .sign-up{
+        position: relative;
+        left: -60px;
+    }
+
+    .toggle-btn{
+        right:  50px;
+    }
+
+    .hero{
+        padding: 40px 0px;
     }
     
 }
